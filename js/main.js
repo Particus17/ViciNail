@@ -65,6 +65,19 @@
             }
         }
     });
-    
+    //Lazy-load images
+    const blurDivs = document.querySelectorAll('.blur-load')
+    blurDivs.forEach(div => {
+        const img = div,querySelector("img")
+        function loaded(){ //loads img immediately
+            div.classList.add('loaded')
+        }
+        //this is where the lazy loading happens
+        if(img.complete){
+            loaded()
+        }else{
+            img.addEventListener('load', loaded)
+        }
+    })
 })(jQuery);
 

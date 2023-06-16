@@ -194,8 +194,20 @@ figure {
 img {
   vertical-align: middle;
   border-style: none;
+  object-fit:cover ;
+  object-position: center;
 }
-
+.blur-load{
+  background-size: cover;
+  background-position: center;
+}
+.blue-load.loaded > img{
+  opacity: 1;
+}
+.blur-load > img{
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
 svg {
   overflow: hidden;
   vertical-align: middle;
